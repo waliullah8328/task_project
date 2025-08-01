@@ -108,6 +108,200 @@ class DynamicFormScreen extends StatelessWidget {
         }
       ]
     };
+    final jsonString2 ={
+      "formName": "Property Inspection Form",
+      "id": 2,
+      "sections": [
+        {
+          "name": "Property Details",
+          "key": "section_1",
+          "fields": [
+            {
+              "id": 1,
+              "key": "text_1",
+              "properties": {
+                "type": "text",
+                "defaultValue": "",
+                "hintText": "ex: 123 Main St",
+                "minLength": 5,
+                "maxLength": 100,
+                "label": "Property Address"
+              }
+            },
+            {
+              "id": 2,
+              "key": "list_1",
+              "properties": {
+                "type": "dropDownList",
+                "defaultValue": "",
+                "hintText": "Select property type",
+                "label": "Property Type",
+                "listItems": "[{\"name\":\"Apartment\",\"value\":1},{\"name\":\"House\",\"value\":2},{\"name\":\"Commercial\",\"value\":3},{\"name\":\"Land\",\"value\":4}]",
+                "multiSelect": false
+              }
+            },
+            {
+              "id": 1,
+              "key": "text_2",
+              "properties": {
+                "type": "text",
+                "defaultValue": "",
+                "hintText": "ex: 1500 sq ft",
+                "minLength": 1,
+                "maxLength": 20,
+                "label": "Area (sq ft)"
+              }
+            },
+            {
+              "id": 3,
+              "key": "yesno_1",
+              "properties": {
+                "type": "yesno",
+                "defaultValue": "",
+                "label": "Is the property furnished?"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Inspection Checklist",
+          "key": "section_2",
+          "fields": [
+            {
+              "id": 2,
+              "key": "list_2",
+              "properties": {
+                "type": "checkBoxList",
+                "defaultValue": "",
+                "hintText": "Select issues found",
+                "label": "Defects Found",
+                "listItems": "[{\"name\":\"Cracks in Walls\",\"value\":1},{\"name\":\"Leaking Roof\",\"value\":2},{\"name\":\"Faulty Wiring\",\"value\":3},{\"name\":\"Plumbing Issues\",\"value\":4}]",
+                "multiSelect": true
+              }
+            },
+            {
+              "id": 4,
+              "key": "image_1",
+              "properties": {
+                "type": "imageView",
+                "defaultValue": "",
+                "label": "Upload photos of defects",
+                "multiImage": true
+              }
+            },
+            {
+              "id": 1,
+              "key": "text_3",
+              "properties": {
+                "type": "text",
+                "defaultValue": "",
+                "hintText": "ex: Major structural damage observed",
+                "minLength": 0,
+                "maxLength": 500,
+                "label": "Additional Notes"
+              }
+            }
+          ]
+        }
+      ]
+    } ;
+    final jsonString3 = {
+      "formName": "Health Survey Form",
+      "id": 3,
+      "sections": [
+        {
+          "name": "Basic Information",
+          "key": "section_1",
+          "fields": [
+            {
+              "id": 1,
+              "key": "text_1",
+              "properties": {
+                "type": "text",
+                "defaultValue": "",
+                "hintText": "ex: Alex Smith",
+                "minLength": 2,
+                "maxLength": 50,
+                "label": "Patient Name"
+              }
+            },
+            {
+              "id": 2,
+              "key": "list_1",
+              "properties": {
+                "type": "dropDownList",
+                "defaultValue": "",
+                "hintText": "Select gender",
+                "label": "Gender",
+                "listItems": "[{\"name\":\"Male\",\"value\":1},{\"name\":\"Female\",\"value\":2},{\"name\":\"Other\",\"value\":3}]",
+                "multiSelect": false
+              }
+            },
+            {
+              "id": 1,
+              "key": "text_2",
+              "properties": {
+                "type": "text",
+                "defaultValue": "",
+                "hintText": "ex: 35",
+                "minLength": 1,
+                "maxLength": 3,
+                "label": "Age"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Medical History",
+          "key": "section_2",
+          "fields": [
+            {
+              "id": 2,
+              "key": "list_2",
+              "properties": {
+                "type": "checkBoxList",
+                "defaultValue": "",
+                "hintText": "Select all that apply",
+                "label": "Existing Conditions",
+                "listItems": "[{\"name\":\"Diabetes\",\"value\":1},{\"name\":\"Hypertension\",\"value\":2},{\"name\":\"Asthma\",\"value\":3},{\"name\":\"Heart Disease\",\"value\":4}]",
+                "multiSelect": true
+              }
+            },
+            {
+              "id": 3,
+              "key": "yesno_1",
+              "properties": {
+                "type": "yesno",
+                "defaultValue": "",
+                "label": "Any allergies?"
+              }
+            },
+            {
+              "id": 1,
+              "key": "text_3",
+              "properties": {
+                "type": "text",
+                "defaultValue": "",
+                "hintText": "ex: Peanuts, Penicillin",
+                "minLength": 0,
+                "maxLength": 200,
+                "label": "If yes, specify"
+              }
+            },
+            {
+              "id": 4,
+              "key": "image_1",
+              "properties": {
+                "type": "imageView",
+                "defaultValue": "",
+                "label": "Upload prescription (if any)",
+                "multiImage": false
+              }
+            }
+          ]
+        }
+      ]
+    };
     final controller = Get.put(DynamicFormController());
     final formName = jsonString['formName'];
     final sections = jsonString['sections'] as List;
