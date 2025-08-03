@@ -7,6 +7,8 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:open_filex/open_filex.dart';
 
+import '../../../../core/utils/constants/app_sizes.dart';
+
 class SubmissionViewPage extends StatelessWidget {
   final Map<String, dynamic> formData;
   final List sections;
@@ -204,10 +206,22 @@ class SubmissionViewPage extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Submission Preview")),
+      appBar: AppBar(
+        leading: GestureDetector(
+        onTap: (){
+            Get.back();
+          },
+          child: Icon(Icons.arrow_back_ios_new)),
+
+        title: Text("Submission Preview",style: TextStyle(fontSize: getWidth(22),fontWeight: FontWeight.w500),),
+        centerTitle: true,
+
+        ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
-        child: Column(children: rows),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+            children: rows),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: savePdfInvoice,

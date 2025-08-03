@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_project/feature/property_inpection_form/pressentation/screens/property_inpection_form_screen.dart';
+import 'package:task_project/routes/app_routes.dart';
 
+import '../../../../core/utils/constants/app_sizes.dart';
 import '../../../customer_feed_back_form/presentation/screen/customer_form_feed_back_form_screen.dart';
+import '../../../health_survey_form/presentation/screens/health_survey_form_screen.dart';
 
 class FormListPage extends StatelessWidget {
   const FormListPage({super.key});
@@ -28,9 +32,10 @@ class FormListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Available Forms"),
+        title: const Text("All Forms Screens"),
+        backgroundColor: Colors.white,
+        toolbarHeight: getHeight(80),
         centerTitle: true,
-        elevation: 2,
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
@@ -41,14 +46,14 @@ class FormListPage extends StatelessWidget {
             onTap: () {
               switch (index) {
                 case 0:
-                  Get.to(() => const DynamicFormScreen ());
+                  Get.to(() => const CustomerFeedBackFormScreen ());
                   break;
-                // case 1:
-                //   Get.to(() => const PropertyInspectionFormScreen());
-                //   break;
-                // case 2:
-                //   Get.to(() => const HealthSurveyFormScreen());
-                //   break;
+                case 1:
+                  Get.to(()=> PropertyInpectionFormScreen());
+                  break;
+                case 2:
+                  Get.to(() =>  HealthSurveyFormScreen());
+                  break;
                 default:
                   Get.snackbar("Error", "Form not implemented");
               }
@@ -96,12 +101,6 @@ class FormListPage extends StatelessWidget {
             ),
           );
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Get.snackbar("Info", "Add new form feature coming soon!");
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }

@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
-import 'package:task_project/feature/form_list/data/screen/form_list_screen.dart';
+
+
+import '../feature/form_list/presentation/screen/form_list_screen.dart';
+import '../feature/property_inpection_form/pressentation/screens/property_inpection_form_screen.dart';
 
 
 
@@ -8,7 +11,7 @@ class AppRoute {
   static String init = "/";
   static String onboardingScreen= "/onboardingScreen";
   static String loginScreen = "/loginScreen";
-  static String signUpScreen = "/signUpScreen";
+  static String propertyInspectionFormScreen = "/propertyInspectionFormScreen";
   static String splashScreen = "/splashScreen";
 
 
@@ -16,6 +19,7 @@ class AppRoute {
   static List<GetPage> routes = [
 
     GetPage(name: init, page: () => FormListPage()),
+    GetPage(name: init, page: () => PropertyInpectionFormScreen ()),
 
    // GetPage(name: init, page: () => WCreatorNavBar()),
 
